@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environclean Services</title>
+    <style>
+        /* Basic styling for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+        form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact HortiConnect</h1>
+        <p>For all Online horticulture Crop Marketing related queries.</p>
+        
+        <div class="contact-info">
+            <h2>Our Offices</h2>
+            <div>
+                <h3>HortiConnect Services Kenya</h3>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:aumalorna@gmail.com">aumalorna@gmail.com</a><br>
+                    <strong>Phone:</strong> +254717676373<br>
+                    6109 Oginga Odinga Rd | Kisumu| 40103 | Kenya<br>
+                    <strong>Hours:</strong> Mon – Sat 9:00 – 18:00
+                </p>
+            </div>
+        </div>
+        
+        <form action="submit_enquiry.php" method="POST">
+            <h2>Interested in our service? Lets know how we may help</h2>
+            <label for="region">What region are you in?</label>
+            <select id="region" name="region">
+                <option value="Africa">Western Kenya</option>
+                <option value="Europe">Eastern Kenya</option>
+                <option value="Asia Pacific">Nairobi Metropolis</option>
+                <option value="North America">Coastal</option>
+                <option value="South America">Rift Valley</option>
+            </select>
+            <br>
+            <label for="province_city">What county/city are you in?</label>
+            <input type="text" id="province_city" name="province_city" required>
+            <br>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required>
+            <br>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required>
+            <br>
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" name="company_name">
+            <br>
+            <label for="interest">I am interested in</label>
+            <select id="interest" name="interest">
+                <option value="Horticulture Farming">Farming Technology</option>
+                <option value="Consultancy Services">Consultancy Services</option>
+                <option value="Training">Training</option>
+                <option value="Marketing Services">Marketing Services</option>
+                <option value="Charges per Services">Charges per Services</option>
+            </select>
+            <br>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="phone">Contact Number</label>
+            <input type="text" id="phone" name="phone">
+            <br>
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+            <br>
+            <input type="submit" value="Submit Enquiry">
+        </form>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Environclean Services. | All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Acceptable Use Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

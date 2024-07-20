@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HortiConnect - Flowers</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #333;
+            color: #201f1f;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            color: red;
+        }
+        header h2 {
+            margin: 0;
+            color: green;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Specific section styles */
+        .flowers {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .contact {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .flower-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .flower-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .flower-item h3 {
+            margin-top: 0;
+        }
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Flowers</h1>
+            <br><br>
+            <h2>Welcome to our flower store, where we showcase a variety of floral products available for purchase</h2>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">0700 721 495</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="flowers">
+            <h2>Flowers</h2>
+
+            <div class="flower-item">
+                <h3>Rose</h3>
+                <img src="https://images.pexels.com/photos/14401/pexels-photo-14401.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="rose">
+                <img src="https://www.flowerstalk.com/wp-content/uploads/2020/10/red-rose-flower.jpg" alt="rose">
+                <p>The rose is a classic symbol of love and beauty, known for its stunning petals and fragrant aroma. Roses come in a variety of colors and are popular for both gifts and decoration.</p>
+                <p class="price">Price: $5.00 per dozen</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Rose', 5.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Sunflower</h3>
+                <img src="https://images.pexels.com/photos/1169084/pexels-photo-1169084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" length="300" width="300" alt="sunflower">
+                <img src="https://www.loveandlavender.com/wp-content/uploads/2020/10/sunflower-1.jpg" alt="sunflower">
+                <p>Sunflowers are known for their bright yellow petals and large, round heads. They symbolize happiness and positivity and are a popular choice for cheerful arrangements and gardens.</p>
+                <p class="price">Price: $3.00 per stem</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Sunflower', 3.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Lily</h3>
+                <img src="https://images.pexels.com/photos/539694/pexels-photo-539694.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="lily">
+                <img src="https://www.thespruce.com/thmb/3P3F4mX4AVQJFOaW_8noXUmtAs4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/BeautifulLilyFlowers-2df7cb58b17d4cf4abfc0562f547fef7.jpg" alt="lily">
+                <p>Lilies are elegant flowers known for their large, fragrant blooms. They come in various colors and are often associated with purity and refined beauty, making them a popular choice for weddings and formal events.</p>
+                <p class="price">Price: $4.00 per stem</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Lily', 4.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Orchid</h3>
+                <img src="https://images.pexels.com/photos/1076233/pexels-photo-1076233.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="orchid">
+                <p>Orchids are known for their exotic and intricate blooms. They are one of the largest families of flowering plants and are prized for their beauty and variety. Orchids make elegant and long-lasting floral arrangements.</p>
+                <p class="price">Price: $6.00 per stem</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Orchid', 6.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Tulip</h3>
+                <img src="https://images.pexels.com/photos/1883385/pexels-photo-1883385.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="tulip">
+                <p>Tulips are beloved for their simple, elegant shape and vibrant colors. They are one of the first flowers to bloom in spring and are widely used in garden beds and floral arrangements.</p>
+                <p class="price">Price: $4.50 per dozen</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Tulip', 4.50)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Daisy</h3>
+                <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="daisy">
+                <p>Daisies are cheerful flowers known for their bright white petals and sunny yellow centers. They symbolize innocence and purity and are often used in casual bouquets and garden beds.</p>
+                <p class="price">Price: $2.00 per bunch</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Daisy', 2.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Peony</h3>
+                <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="peony">
+                <p>Peonies are lush, fragrant flowers that bloom in late spring. They are known for their large, fluffy blossoms and come in a variety of colors. Peonies are often used in wedding bouquets and as decorative garden plants.</p>
+                <p class="price">Price: $7.00 per stem</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Peony', 7.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Hydrangea</h3>
+                <img src="https://images.pexels.com/photos/414510/pexels-photo-414510.jpeg?auto=compress&cs=tinysrgb&w=600" lenth="300" width="300" alt="hydrangea">
+                <p>Hydrangeas are known for their large, globe-shaped blooms and vibrant colors. They are versatile flowers that can be used in both fresh and dried arrangements, and they add a touch of elegance to any setting.</p>
+                <p class="price">Price: $5.50 per stem</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Hydrangea', 5.50)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Lavender</h3>
+                <img src="https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=600" length="300" width="300" alt="lavender">
+                <p>Lavender is known for its calming fragrance and beautiful purple flowers. It is often used in aromatherapy and as a decorative element in gardens and home decor. Lavender also has culinary and medicinal uses.</p>
+                <p class="price">Price: $3.50 per bunch</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Lavender', 3.50)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="flower-item">
+                <h3>Chrysanthemum</h3>
+                <img src="https://media.istockphoto.com/id/595126614/photo/colorful-chrysanthemum-flower.jpg?s=1024x1024&w=is&k=20&c=BpgOUsMFP97vePiga1kneyx174IxFq-Yy_npeTamuKA=" length="300" width="300" alt="chrysanthemum">
+                <p>Chrysanthemums, or mums, are popular flowers known for their diverse shapes and colors. They are commonly used in floral arrangements and are symbolic of joy and optimism.</p>
+                <p class="price">Price: $4.00 per bunch</p>
+                <div class="buttons">
+                    <a href="#" class="button" onclick="addToCart('Chrysanthemum', 4.00)">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="#" class="button" id="orderButton">Order</a>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Quick Contacts</h2>
+            <p>Warehouse No. 6, Athi 55 Ltd Complex<br>
+            +254 722 563 698<br>
+            +254 735 544 544<br>
+            +254 723 443 677</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2014 - 2024. HortiConnect.</p>
+            <p>#FloralElegance #BloomWithHortiConnect #FlowerPower</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({name, price});
+            alert(`${name} has been added to your cart!`);
+        }
+
+        document.getElementById('orderButton').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items to the cart before ordering.');
+            } else {
+                alert('Thank you for your order! We will contact you shortly.');
+                cart = []; // Clear the cart after ordering
+            }
+        });
+    </script>
+</body>
+</html>

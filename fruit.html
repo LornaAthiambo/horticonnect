@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: #f7f4f4;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            margin: 0;
+            color: black;
+        }
+        header h2 {
+            margin: 0;
+            color: green;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Specific section styles */
+        .fruits {
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .contact {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .fruit-item {
+            margin-bottom: 20px;
+        }
+        .fruit-item img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .add-to-cart {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+        .cart {
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+        .order-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fruits</h1>
+            <h2>Welcome to our store. <br><br>GET Fresh, Natural and Affordable Fruits at your Doorstep</h2>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">0700 721 495</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="fruits">
+            <div class="fruit-item">
+                <h3>Apple</h3>
+                <img src="https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834" length="300" width="300" alt="apple">
+                <p>Apples are one of the most cultivated and consumed fruits globally. They are known for their crisp texture and sweet flavor.</p>
+                <p><strong>$1.00 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Apple" data-price="1.00">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Banana</h3>
+                <img src="https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/01/30152155/shutterstock_518328943-1-768x512.jpg" length="300" width="300" alt="banana">
+                <p>Bananas are a popular tropical fruit known for their high potassium content and creamy texture. They are consumed fresh or used in cooking.</p>
+                <p><strong> price: $0.50 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Banana" data-price="0.50">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Orange</h3>
+                <img src="https://www.shutterstock.com/shutterstock/photos/1927497314/display_1500/stock-photo-orange-with-cut-in-half-and-green-leaves-isolated-on-white-background-1927497314.jpg" length="300" width="300" alt="orange">
+                <p>Oranges are citrus fruits known for their refreshing flavor and high vitamin C content. They are consumed fresh or used to make juices.</p>
+                <p><strong>Price: $0.75 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Orange" data-price="0.75">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Mango</h3>
+                <img src="https://www.shutterstock.com/shutterstock/photos/2335347201/display_1500/stock-photo-mango-leaves-with-clipping-path-isolated-on-a-white-background-mango-collection-2335347201.jpg" length="300" width="300" alt="mango">
+                <p>Mangoes are tropical fruits prized for their sweet, juicy flesh and unique flavor. They are consumed fresh, dried, or in smoothies.</p>
+                <p><strong>Price: $1.50 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Mango" data-price="1.50">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Grapes</h3>
+                <img src="data:image/jpeg;base64,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" length="300" width="300" alt="grapes">
+                <p>Grapes are small, sweet fruits grown in clusters on vines. They are consumed fresh or dried (raisins) and are used to make wine.</p>
+                <p><strong>Price: $2.00 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Grapes" data-price="2.00">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Pineapple</h3>
+                <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" length="300" width="300" alt="pineapple">
+                <p>Pineapples are tropical fruits with a sweet and tangy flavor. They are consumed fresh, juiced, or used in cooking and desserts.</p>
+                <p><strong>Price: $1.25 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Pineapple" data-price="1.25">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Strawberry</h3>
+                <img src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" length="300" width="300" alt="strawberry">
+                <p>Strawberries are juicy, red berries known for their sweet flavor. They are often eaten fresh or used in jams, desserts, and salads.</p>
+                <p><strong>Price: $2.50 per kg</strong></p>
+                <a href="#" class="add-to-cart" onclick="addToCart" data-fruit="Strawberry" data-price="2.50">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Watermelon</h3>
+                <img src="https://images.pexels.com/photos/1313267/pexels-photo-1313267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" length="300" width="300" alt="watermelon">
+                <p>Watermelons are large, refreshing fruits with juicy flesh and a high water content. They are a popular summer fruit eaten fresh or in salads.</p>
+                <p><strong>Price: $3.00 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Watermelon" data-price="3.00">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Pear</h3>
+                <img src="https://www.shutterstock.com/shutterstock/photos/2227193465/display_1500/stock-photo-fresh-snow-pear-or-nashi-pear-golden-pear-fruits-delicious-and-sweet-on-pink-background-2227193465.jpg" length="300" width="300" alt="pear">
+                <p>Pears are sweet and juicy fruits with a buttery texture. They are consumed fresh, poached, or used in baking and desserts.</p>
+                <p><strong>Price: $1.75 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Pear" data-price="1.75">Add to Cart</a>
+            </div>
+
+            <div class="fruit-item">
+                <h3>Papaya</h3>
+                <img src="https://as1.ftcdn.net/v2/jpg/05/13/44/64/1000_F_513446444_l72l8zWTOwy4uHJYvRjW62T21Et3UKGB.jpg" length="300" width="300" alt="papaya">
+                <p>Papayas are tropical fruits known for their sweet flavor and vibrant orange flesh. They are eaten fresh, juiced, or used in salads and salsas.</p>
+                <p><strong>Price: $2.25 per kg</strong></p>
+                <a href="#" class="add-to-cart" data-fruit="Papaya" data-price="2.25">Add to Cart</a>
+            </div>
+        </section>
+
+        <section class="cart">
+            <h2>Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be listed here -->
+            </ul>
+            <a href="#" class="order-button" id="order-button">Order</a>
+        </section>
+
+        <section class="contact">
+            <h2>Quick Contacts</h2>
+            <p>Warehouse No. 6, Athi 55 Ltd Complex<br
