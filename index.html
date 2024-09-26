@@ -3,50 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registering and Login</title>
+    <title>HortiConnect Services</title>
     <style>
-      
-        body {
-            font-family: Arial, sans-serif;
+        /* Resetting default margin and padding */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #08832711;
             line-height: 1.6;
-            background-color: #eef6f8e5;
-            background-image: url('image/buy online.PNG');
-            text-align: center;
-        
-          
+            margin: 0;
+            background-image: url('image/background.PNG');
         }
-        form {
-            max-width: 400px;
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-         
-        a {
-            text-align: center;
-
+            padding: 0 20px;
         }
 
-        label {
-            display: block;
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            padding: 10px 0;
+            color: rgb(192, 179, 179);
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            vertical-align: middle;
+        }
+
+        .nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .nav-menu li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-menu li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main sections */
+        main {
+            padding: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: #f2f2f2;
+        }
+
+        .section h2 {
+            color: #0c0b0b;
+            font-size: 2rem;
             margin-bottom: 10px;
         }
-        input {
+
+        .section p {
+            color: #141212;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #722fdf;
+            color: rgb(32, 16, 16);
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            .nav-menu li {
+                display: block;
+                margin: 10px 0;
+            }
+            header img {
+                width: 80px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section h2 {
+                font-size: 1.8rem;
+                background-color: #f2f2f2;
+            }
+            .section p {
+                font-size: 1rem;
+                color: #45a049;
+            }
+        }
+
+        /* Additional styles */
+        .search-bar {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .featured {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f2f2f2;
+        }
+
+        .featured-item {
+            flex: 1;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
         }
-        button {
+
+        .contact-form textarea {
+            height: 100px;
+        }
+
+        .contact-form button {
             background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
@@ -55,159 +182,254 @@
             cursor: pointer;
             width: 100%;
         }
-        button:hover {
+
+        .contact-form button:hover {
             background-color: #45a049;
         }
-        .hidden {
-            display: none;
+
+        /* Navigation bar styles */
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+    
         }
-        .toggle-link {
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
             text-align: center;
-            margin-top: 10px;
-            cursor: pointer;
-            color: #ff002b;
-            text-decoration: underline;
+            padding: 14px 20px;
+            text-decoration: none;
         }
-        .toggle-link:hover {
-            color: #0056b3;
+
+        .nav-links a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
 <body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <img src="image/logo.PNG" alt="HortiConnect Services Logo" width="100" height="auto">
+            <br>
+            <br>
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="products.html">Products</a>
+                        <ul class="dropdown-content">
+                            <li><a href="vegetable.html">Vegetables</a></li>
+                            <li><a href="fruit.html">Fruits</a></li>
+                            <li><a href="flower.html">Flowers</a></li>
+                            <li><a href="herb.html">Herbs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="farmers.html">Farmers</a></li>
+                    <li><a href="customer_portal.html">Customer</a></li>
+                    <li><a href="contact_us.html">Contact</a></li>
+                    <li><a href="#" id="login-btn">Login</a></li>
+                    <li><a href="#" id="register-btn">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div id="registerContainer">
-        <h2>Register</h2>
-        <form id="registerForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <!-- Main content sections -->
+    <main>
+        <!-- Introduction section -->
+        <section id="intro" class="section">
+            <div class="container">
+                <h2>HORTICULTURE FOR LIFE</h2>
+                <p>Welcome to our HortiConnect Platform. We are dedicated to providing sustainable Marketing solutions...</p>
+            </div>
+        </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Services section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Explore our comprehensive range of HortiConnect services tailored to meet your needs...</p>
+                <ul>
+                    <li>Offering Online Marketing Platform For Horticulture Produce</li>
+                    <li>Door step services</li>
+                    <li>Providing Fresh products to consumers</li>
+                    <li>Interactive platform between farmers and consumers</li>
+                </ul>
+            </div>
+        </section>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <!-- About Us section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Learn about our company's mission, values, team, and commitment.</p>
+            </div>
+        </section>
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <!-- Marketing Programs section -->
+        <section id="Marketing" class="section">
+            <div class="container">
+                <h2>Marketing Programs</h2>
+                <p>Discover our initiatives online marketing site to promote various horticulture crops.</p>
+            </div>
+        </section>
 
-            <button type="submit">Register</button>
-        </form>
-        <div class="toggle-link" id="toLogin">Already have an account? Log in</div>
-    </div>
-
-    <div id="loginContainer" class="hidden">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <label for="loginEmail">Email:</label>
-            <input type="email" id="loginEmail" name="email" required>
-
-            <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-        <div class="toggle-link" id="toRegister">Don't have an account? Register</div>
-    </div>
-
-    <div id="contentContainer" class="hidden">
-        <h1>WELCOME TO OUR HORTICONNECT WEBSITE</h1>
-        <a href="home.html" id="product">CLICK HERE TO ACCESS THE SERVICES</a>
-    </div>
-
-    <div id="productPageContainer" class="hidden">
-        <h2>Product Information</h2>
-        <p>This is some detailed product information only visible after logging in.</p>
-        <a href="home.html" id="home">Back to Homepage</a>
-    </div>
-
-    <script>
-        // Toggle between login and register forms
-        document.getElementById('toLogin').addEventListener('click', function() {
-            document.getElementById('registerContainer').classList.add('hidden');
-            document.getElementById('loginContainer').classList.remove('hidden');
-        });
-
-        document.getElementById('toRegister').addEventListener('click', function() {
-            document.getElementById('loginContainer').classList.add('hidden');
-            document.getElementById('registerContainer').classList.remove('hidden');
-        });
-
-        // Registration form submission
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Get form values
-            var username = document.getElementById('username').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirmPassword').value;
-
-            // Simple form validation
-            if (password !== confirmPassword) {
-                alert('Passwords do not match.');
-                return;
-            }
-
-            // Dummy user registration (you should replace this with actual registration logic)
-            localStorage.setItem('username', username);
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
-
-            // Alert the user that registration was successful
-            alert('Registration successful! Redirecting to login page.');
-
-            // Hide register form and show login form
-            document.getElementById('registerContainer').classList.add('hidden');
-            document.getElementById('loginContainer').classList.remove('hidden');
-        });
-
-        // Login form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Get form values
-            var email = document.getElementById('loginEmail').value;
-            var password = document.getElementById('loginPassword').value;
-
-            // Dummy user login (you should replace this with actual login logic)
-            var storedEmail = localStorage.getItem('email');
-            var storedPassword = localStorage.getItem('password');
-
-            if (email === storedEmail && password === storedPassword) {
-                alert('Login successful! Redirecting to homepage.');
+        <!-- Local Harvest Connect section -->
+        <section id="local-harvest" class="section">
+            <div class="container">
+                    <h1>Local Harvest Connect</h1>
+                    <h3>Connecting local horticulture farmers with customers</h3>
                 
-                // Hide login form and show homepage content
-                document.getElementById('loginContainer').classList.add('hidden');
-                document.getElementById('contentContainer').classList.remove('hidden');
-            } else {
-                alert('Invalid email or password.');
-            }
-        });
+                <input type="text" class="search-bar" placeholder="Search for farmers or products...">
+        
+                <h2>Featured Farmers</h2>
+                <div class="featured">
+                    <div class="featured-item">
+                        <h3>Green Thumb Farm</h3>
+                        <p>Specializing in organic vegetables</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>Sunny Orchard</h3>
+                        <p>Fresh fruits and homemade jams</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>Blooming Fields</h3>
+                        <p>Beautiful flowers and ornamental plants</p>
+                    </div>
+                </div>
+        
+                <h2>Seasonal Specials</h2>
+                <div class="featured">
+                    <div class="featured-item">
+                        <h3>Summer Berries</h3>
+                        <p>Fresh strawberries, blueberries, and raspberries</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>Heirloom Tomatoes</h3>
+                        <p>Variety of colorful, flavorful tomatoes</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>Herb Garden Kits</h3>
+                        <p>Start your own herb garden at home</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Navigation between homepage and product page
-        document.getElementById('productPageLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('contentContainer').classList.add('hidden');
-            document.getElementById('productPageContainer').classList.remove('hidden');
-        });
+        <!-- Online Horticulture Marketing section -->
+        <section id="online-marketing" class="section">
+            <div class="container">
+                <div id="aboutSection">
+                    <h2>About Online Horticulture Marketing</h2>
+                    <p>Online horticulture marketing involves using digital platforms to promote and sell horticultural products such as fruits, vegetables, flowers, and ornamental plants. It allows farmers to reach a wider audience and increase sales by leveraging the power of the internet.</p>
+                    <p>Key strategies include creating an attractive website, optimizing for search engines (SEO), engaging with customers on social media, and using online marketplaces to expand market reach.</p>
+                </div>
+                
+                <div id="benefitsSection">
+                    <h2>Benefits of Online Horticulture Marketing</h2>
+                    <ul>
+                        <li>Reach a global audience of potential customers.</li>
+                        <li>Increase visibility and brand awareness.</li>
+                        <li>Direct communication with customers for feedback and promotions.</li>
+                        <li>Ability to showcase product diversity and quality through photos and videos.</li>
+                        <li>Opportunity to sell directly to consumers, reducing dependency on intermediaries.</li>
+                    </ul>
+                </div>
+                
+                <div id="contactSection" class="contact-form">
+                    <h2>Contact Us</h2>
+                    <form id="contactForm" action="#">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        document.getElementById('homePageLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('productPageContainer').classList.add('hidden');
-            document.getElementById('contentContainer').classList.remove('hidden');
-        });
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HortiConnect Services. All rights reserved.</p>
+        </div>
+    </footer>
 
-        // Redirect to login page if user is not logged in
-        function checkLogin() {
-            var loggedIn = localStorage.getItem('email') && localStorage.getItem('password');
-            if (!loggedIn) {
-                document.getElementById('contentContainer').classList.add('hidden');
-                document.getElementById('loginContainer').classList.remove('hidden');
-            }
+    <!-- Optional: JavaScript for interactive elements -->
+    <script>
+        // Example function for interactive elements (optional)
+        function alertMessage() {
+            alert('This is an example of an interactive element.');
         }
 
-        // Run the checkLogin function on page load
-        window.onload = checkLogin;
+        // JavaScript for contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            
+            // For demonstration, log form values
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+            
+            // Simulate sending email (replace with actual backend integration)
+            alert('Thank you, ' + name + '! Your message has been sent.');
+            
+            // Clear form fields after submission
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        });
     </script>
 </body>
 </html>
