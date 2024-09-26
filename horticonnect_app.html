@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HortiConnect - Linking Farmers and Consumers</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #eef6f8e5;
+            background-image: url('image/buy online.PNG');
+          
+        }
+
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            color: rgb(32, 6, 6);
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: auto;
+            padding-left: 20px;
+            width: 100px; /* Adjust as per your logo size */
+            height: auto;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 10px;
+        }
+
+        .nav-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Main section styles */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #b64444;
+        }
+
+        section p {
+            font-size: 1.8rem;
+            color: #ee7878;
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 20% auto;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+        }
+        
+        header img {
+            vertical-align: middle;
+        }  
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-content input,
+        .modal-content select,
+        .modal-content button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                width: 100%;
+                background-color: #4CAF50;
+                top: 60px;
+                left: 0;
+                z-index: 99;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .dropdown-content {
+                min-width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="logo"> HortiConnect</div>
+            <br>
+            <br>
+            <img src="image/logo.PNG" alt="HortiConnect Services Logo" width="100" height="auto">
+            <br>
+            <br>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about_us.html">About</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products</a>
+                    <ul class="dropdown-content">
+                        <li><a href="vegetable.html">Vegetables</a></li>
+                        <li><a href="fruit.html">Fruits</a></li>
+                        <li><a href="flower.html">Flowers</a></li>
+                        <li><a href="herb.html">Herbs</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="farmers.html">Farmers</a></li>
+                <li><a href="customer_portal.html">Customer</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+                <li><a href="register.html" id="register-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to HortiConnect</h1>
+            <p>Home for fresher and healthier produce.</p>
+        </section>
+
+        <!-- Login Modal -->
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Register</h2>
+                <form id="register-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <select required>
+                        <option value="">Select Role</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="consumer">Consumer</option>
+                    </select>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript for toggling navigation menu on mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // JavaScript for modal functionality
+        const loginModal = document.getElementById('login-modal');
+        const registerModal = document.getElementById('register-modal');
+        const loginBtn = document.getElementById('login-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const closeButtons = document.querySelectorAll('.close');
+
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'block';
+        });
+
+        registerBtn.addEventListener('click', () => {
+            registerModal.style.display = 'block';
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal || e.target === registerModal) {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
