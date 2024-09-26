@@ -48,6 +48,16 @@
         .hidden {
             display: none;
         }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .toggle-link:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +78,7 @@
 
             <button type="submit">Register</button>
         </form>
+        <div class="toggle-link" id="toLogin">Already have an account? Log in</div>
     </div>
 
     <div id="loginContainer" class="hidden">
@@ -81,9 +92,22 @@
 
             <button type="submit">Login</button>
         </form>
+        <div class="toggle-link" id="toRegister">Don't have an account? Register</div>
     </div>
 
     <script>
+        // Toggle between login and register forms
+        document.getElementById('toLogin').addEventListener('click', function() {
+            document.getElementById('registerContainer').classList.add('hidden');
+            document.getElementById('loginContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('toRegister').addEventListener('click', function() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('registerContainer').classList.remove('hidden');
+        });
+
+        // Registration form submission
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
 
@@ -112,6 +136,7 @@
             document.getElementById('loginContainer').classList.remove('hidden');
         });
 
+        // Login form submission
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
 
